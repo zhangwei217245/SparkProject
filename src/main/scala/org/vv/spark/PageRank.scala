@@ -41,7 +41,7 @@ object PageRank {
 			}
 			ranks = contribs.reduceByKey(_+_).mapValues(0.15 + 0.85 * _)
 		}
-		//sort by rank value and output
+		//sort by rank value and save the output
 		ranks.map(k => k.swap).sortByKey(false).map(k => k.swap).map(p => p._1 + "\t" + p._2)
 			.saveAsTextFile("page_rank_rst");
 	}
