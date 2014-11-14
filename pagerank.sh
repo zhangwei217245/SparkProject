@@ -21,5 +21,10 @@ CONFIG_OPTS="-Dspark.master=local -Dspark.jars=$JAR_NAME"
 
 echo "$CLASSPATH"
 
+hadoop fs -rm -r -skipTrash page_rank_rst
 
 $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS org.vv.spark.PageRank $1 $2 $3
+
+hadoop fs -cat page_rank_rst/part-* > page_rank_rst.txt
+
+more page_rank_rst.txt
