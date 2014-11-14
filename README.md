@@ -60,7 +60,7 @@ $ put <ABSOLUTE_PATH_TO_YOUR_JAR_FILE_ON_YOUR_LOCAL_MACHINE>
 
 * By running our shell script, you can easily run **WordFind** program on JVM runtime.
 
-Modify the value of JAR_NAME accordingly in file **wordfind.sh** , then execute the command below:
+    + Modify the value of JAR_NAME accordingly in file **wordfind.sh** , then execute the command below:
 
 ```bash
 $ ./wordfind.sh "spark://hdn1001.local:7077" "/CS5331_Examples/Programming_Project_Dataset.txt" "Apple"
@@ -68,9 +68,9 @@ $ ./wordfind.sh "spark://hdn1001.local:7077" "/CS5331_Examples/Programming_Proje
 
 ## Run **PageRank** Program for Problem B
 
-Modify the value of JAR_NAME accordingly in file **pagerank.sh** , then execute the command below:
-
 * By running our shell script, you can easily run **PageRank** program on JVM runtime.
+
+    + Modify the value of JAR_NAME accordingly in file **pagerank.sh** , then execute the command below:
 
 ```bash
 $ ./pagerank.sh "spark://hdn1001.local:7077" "/CS5331_Examples/wiki-Vote.txt" "10"
