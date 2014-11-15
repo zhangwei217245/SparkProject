@@ -21,7 +21,7 @@ $ sbt package
 
 If not, download them from <http://www.scala-lang.org> and <http://maven.apache.org>. Follow the document, and install them.
 
-* Make sure the current working directory is the one containing this README.md file.
+* Make sure the current working directory is the one containing the **src** directory as a sub-directory.
 * Execute the command below in shell
 
 ```bash
@@ -44,7 +44,7 @@ $ mvn package
 $ sftp <your_user_name>@hadoop.hpcc.ttu.edu
 ```
 
-* Enter the password, and execute the JAR file to your project directory.
+* Enter the password, and upload the JAR file to your project directory.
 
 ```bash
 $ mkdir <NAME_OF_YOUR_SPARK_WORKING_DIRECTORY>
@@ -55,6 +55,13 @@ $ put <ABSOLUTE_PATH_TO_YOUR_JAR_FILE_ON_YOUR_LOCAL_MACHINE>
 
 
 # Run standalone program on Spark Cluster
+
+Before trying to run the program, make sure that the bash script are executable.
+
+```bash
+$ chmod +x ./wordfind.sh
+$ chmod +x ./pagerank.sh
+```
 
 ## Run **WordFind** Program for Problem A
 
