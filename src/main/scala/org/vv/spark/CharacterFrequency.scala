@@ -7,7 +7,7 @@ import org.apache.spark.{SparkContext, SparkConf}
  *
  * NOTE: THIS IS ONLY FOR TEST, NOT FOR FINAL RELEASE.
  */
-object Compressor {
+object CharacterFrequency {
 	def main(args: Array[String]) {
 		// There must be more than 3 command arguments passing to this program. Otherwise, exit the program.
 		if (args.length < 3) {
