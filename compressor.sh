@@ -81,5 +81,5 @@ echo "The reduction_ratio is ${reduction_ratio}%"
 
 decompressed_size=`hadoop fs -ls ${FILENAME}.decompressed/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("%d",rst)}'`
 
-echo "The Size of the Compressed File is ${decompressed_size} Bytes."
+echo "The Size of the Decompressed File is ${decompressed_size} Bytes."
 
