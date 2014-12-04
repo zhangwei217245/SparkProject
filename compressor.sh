@@ -75,7 +75,7 @@ original_size=`hadoop fs -ls ${FILEPATH} | grep -v "Found" |awk '{printf("%d",$5
 
 echo "The Size of the Original File is ${original_size} Bytes."
 
-reduction_ratio=`echo "(${original_size}-${compressed_size})/${original_size} * 100" | bc -l`
+reduction_ratio=`echo "scale=3;(${original_size}-${compressed_size})/${original_size} * 100" | bc -l`
 
 echo "The reduction_ratio is ${reduction_ratio}%"
 
