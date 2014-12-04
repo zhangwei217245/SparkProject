@@ -5,6 +5,9 @@ source /etc/spark/conf/spark-env.sh
 COMPRESSOR_TIME="compress.time"
 DECOMPRESSOR_TIME="decompress.time"
 
+COMPRESSOR_LOG="compress.log"
+DECOMPRESSOR_LOG="decompress.log"
+
 JAR_NAME="./target/SparkProject-1.0.jar"
 
 # system jars:
@@ -37,7 +40,7 @@ hadoop fs -rm -r -skipTrash ./${FILENAME}.decompressed
 
 echo "Starting Compressor..."
 
-command time -v $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}  1>/dev/null 2>${COMPRESSOR_TIME}
+command time -v -o ${COMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH} > ${COMPRESSOR_LOG} 2>&1
 
 compress_time=`cat ${COMPRESSOR_TIME}`
 
@@ -48,7 +51,7 @@ sleep 5s
 
 echo "Starting Decompressor..."
 
-command time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME}  1>/dev/null 2>${DECOMPRESSOR_TIME}
+command time -v -o ${DECOMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} >${DECOMPRESSOR_LOG} 2>&1
 
 decompress_time=`cat ${DECOMPRESSOR_TIME}`
 
