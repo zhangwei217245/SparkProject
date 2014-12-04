@@ -82,3 +82,7 @@ $ ./wordfind.sh "spark://hdn1001.local:7077" "/CS5331_Examples/Programming_Proje
 ```bash
 $ ./pagerank.sh "spark://hdn1001.local:7077" "/CS5331_Examples/wiki-Vote.txt" "10"
 ```
+
+## Run **Compressor** and **Decompressor** Program for Course Project
+
+* See <https://github.com/zhangwei217245/SparkProject/HUFFMAN.md>

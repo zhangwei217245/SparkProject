@@ -33,13 +33,23 @@ hadoop fs -rm -r -skipTrash ./${FILENAME}.huff
 hadoop fs -rm -r -skipTrash ./${FILENAME}.decompressed
 
 
-$JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}
-$JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILEPATH}
+time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}
+time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILEPATH}
 
 
-hadoop fs -ls ${FILENAME}.huff/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("The Size of the Compressed File is %d Bytes\n",rst/8)}'
+compressed_size=`hadoop fs -ls ${FILENAME}.huff/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("%d",rst/8)}'`
 
-hadoop fs -ls ${FILEPATH} | grep -v "Found" |awk '{printf("The Size of the Original File is %d Bytes\n",$5)}'
+echo "The Size of the Compressed File is ${compressed_size} Bytes."
 
-hadoop fs -ls ${FILENAME}.decompressed/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("The Size of the Compressed File is %d Bytes\n",rst)}'
+original_size=`hadoop fs -ls ${FILEPATH} | grep -v "Found" |awk '{printf("%d",$5)}'`
+
+echo "The Size of the Original File is ${original_size} Bytes."
+
+reduction_ratio=`echo "(${original_size}-${compressed_size})/${original_size} * 100" | bc -l`
+
+echo "The reduction_ratio is ${reduction_ratio}%"
+
+decompressed_size=`hadoop fs -ls ${FILENAME}.decompressed/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("%d",rst)}'`
+
+echo "The Size of the Compressed File is ${decompressed_size} Bytes."
 
