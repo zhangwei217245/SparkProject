@@ -1,4 +1,4 @@
-package org.vv.spark
+package org.vv.test
 
 /**
  * Created by zhangwei on 12/1/14.
