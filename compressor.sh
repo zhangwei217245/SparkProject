@@ -32,9 +32,25 @@ hadoop fs -rm -r -skipTrash ./${FILENAME}.ec
 hadoop fs -rm -r -skipTrash ./${FILENAME}.huff
 hadoop fs -rm -r -skipTrash ./${FILENAME}.decompressed
 
+echo "Starting Compressor..."
 
-time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}
-time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILEPATH}
+compress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}`
+
+echo "Compressor Done!"
+
+echo "Waiting for 5 seconds..."
+sleep 5s
+
+echo "Starting Decompressor..."
+
+decompress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILEPATH}`
+
+echo "Decompressor Done!"
+
+echo "Compress Time:"
+echo ${compress_time}
+echo "Decompress Time:"
+echo ${decompress_time}
 
 
 compressed_size=`hadoop fs -ls ${FILENAME}.huff/part-* |grep -v "Found" |awk 'BEGIN{rst=0}{rst=rst+$5}END{printf("%d",rst/8)}'`
