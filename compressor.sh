@@ -42,8 +42,6 @@ echo "Starting Compressor..."
 
 command time -v -o ${COMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH} > ${COMPRESSOR_LOG} 2>&1
 
-compress_time=`cat ${COMPRESSOR_TIME}`
-
 echo "Compressor Done!"
 
 echo "Waiting for 5 seconds..."
@@ -53,21 +51,19 @@ echo "Starting Decompressor..."
 
 command time -v -o ${DECOMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} >${DECOMPRESSOR_LOG} 2>&1
 
-decompress_time=`cat ${DECOMPRESSOR_TIME}`
-
 echo "Decompressor Done!"
 
 
 echo "============= Compress Time: ============="
 echo
 echo
-echo ${compress_time}
+cat ${COMPRESSOR_TIME}
 echo
 echo
 echo "============= Decompress Time: ============="
 echo
 echo
-echo ${decompress_time}
+cat ${DECOMPRESSOR_TIME}
 
 
 
