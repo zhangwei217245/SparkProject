@@ -34,7 +34,7 @@ hadoop fs -rm -r -skipTrash ./${FILENAME}.decompressed
 
 echo "Starting Compressor..."
 
-compress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}`
+compress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH}  >/dev/null`
 
 echo "Compressor Done!"
 
@@ -43,7 +43,7 @@ sleep 5s
 
 echo "Starting Decompressor..."
 
-decompress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILEPATH}`
+decompress_time=`time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME}  >/dev/null`
 
 echo "Decompressor Done!"
 
