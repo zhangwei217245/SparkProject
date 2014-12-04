@@ -28,5 +28,6 @@ $ mvn clean package
 # Run it
 
 ```bash
+$ chmod +x ./compressor.sh
 $ ./compressor.sh "/CS5331_Examples/Hamlet_by_William_Shakespeare"
 ```
