@@ -85,4 +85,4 @@ $ ./pagerank.sh "spark://hdn1001.local:7077" "/CS5331_Examples/wiki-Vote.txt" "1
 
 ## Run **Compressor** and **Decompressor** Program for Course Project
 
-* See [github](/HUFFMAN.md)
+* See [HUFFMAN](/HUFFMAN.md)
