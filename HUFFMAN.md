@@ -2,7 +2,6 @@
 
 ```bash
 $ ssh <username>@hadoop.hpcc.ttu.edu
-$ ssh hdn1001
 ```
 
 # Download the Project
@@ -11,9 +10,17 @@ $ ssh hdn1001
 $ git clone "https://github.com/zhangwei217245/SparkProject.git"
 ```
 
+# Log on the Data Node
+
+```bash
+$ ssh hdn1001
+```
+
+
 # Compile the Project
 
 ```bash
+# change the directory to the one where you download the project.
 $ cd SparkProject
 $ mvn clean package
 ```
