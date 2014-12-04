@@ -36,3 +36,13 @@ $ ./compressor.sh "/CS5331_Examples/Hamlet_by_William_Shakespeare"
 ```bash
 $ chmod +x ./compressor.sh
 ```
+
+# What if the code is changed?
+
+```bash
+# exit to hadoop frame
+$ exit
+$ git pull
+# log on to the Data Node again
+$ ssh hdn1001
+```
