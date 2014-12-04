@@ -46,3 +46,8 @@ $ git pull
 # log on to the Data Node again
 $ ssh hdn1001
 ```
+
+# More details on **Compressor** and **Decompressor**
+
+[Compressor.scala](/src/main/scala/edu/ttu/bigdata/huffman/Compressor.scala)
+[Decompressor.scala](/src/main/scala/edu/ttu/bigdata/huffman/Decompressor.scala)
