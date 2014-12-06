@@ -71,5 +71,5 @@ See the bash script for more information.
 * A bash script for running data compression on Spark in a batch [batchCompressor.sh](/batchCompressor.sh)
 * A bash script for running data compression via tar with gunzip in a batch [targz.sh](/tar_zip_report/targz.sh)
 * A bash script for running data compression via zip utility in a batch [zip.sh](/tar_zip_report/zip.sh)
-
+* For benchmark result, visit: [CompressionOnHadoop.xlsx](/spark_report/CompressionOnHadoop.xlsx)
 * Note: Due to the limited resource of current HPCC environment(in terms of CPU load and available memory), we failed to execute data compression against the 100MB file provided in programming project 1, though tar and zip command succeed in doing that. So, accordingly, we were not able to fetch the data about execution time and compressed file size of that 100MB file.
