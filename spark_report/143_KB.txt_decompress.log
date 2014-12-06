@@ -1,0 +1,1305 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/zookeeper/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/spark/assembly/lib/spark-assembly_2.10-0.9.0-cdh5.0.0-hadoop2.3.0-cdh5.0.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/spark/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+14/12/06 15:18:29 INFO slf4j.Slf4jLogger: Slf4jLogger started
+14/12/06 15:18:30 INFO Remoting: Starting remoting
+14/12/06 15:18:30 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://spark@hdn1001.local:49857]
+14/12/06 15:18:30 INFO Remoting: Remoting now listens on addresses: [akka.tcp://spark@hdn1001.local:49857]
+14/12/06 15:18:30 INFO spark.SparkEnv: Registering BlockManagerMaster
+14/12/06 15:18:30 INFO storage.DiskBlockManager: Created local directory at /tmp/spark-local-20141206151830-4243
+14/12/06 15:18:30 INFO storage.MemoryStore: MemoryStore started with capacity 8.4 GB.
+14/12/06 15:18:30 INFO network.ConnectionManager: Bound socket to port 40576 with id = ConnectionManagerId(hdn1001.local,40576)
+14/12/06 15:18:30 INFO storage.BlockManagerMaster: Trying to register BlockManager
+14/12/06 15:18:30 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdn1001.local:40576 with 8.4 GB RAM
+14/12/06 15:18:30 INFO storage.BlockManagerMaster: Registered BlockManager
+14/12/06 15:18:30 INFO spark.HttpServer: Starting HTTP Server
+14/12/06 15:18:30 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:30 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:52032
+14/12/06 15:18:30 INFO broadcast.HttpBroadcast: Broadcast server started at http://10.6.8.254:52032
+14/12/06 15:18:30 INFO spark.SparkEnv: Registering MapOutputTracker
+14/12/06 15:18:30 INFO spark.HttpFileServer: HTTP File server directory is /tmp/spark-a7736f27-d4e2-44a0-9f5d-6d8b9b7815af
+14/12/06 15:18:30 INFO spark.HttpServer: Starting HTTP Server
+14/12/06 15:18:30 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:30 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:57828
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4040: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@9be1041: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4040. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4041: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@156a9424: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4041. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4042: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@268be9ef: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4042. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4043: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@26cd2192: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4043. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4044: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@6ad2b64e: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4044. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4045: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@5c0ad483: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4045. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4046: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@394596d5: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO ui.JettyUtils: Failed to create UI at port, 4046. Trying again.
+14/12/06 15:18:31 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:18:31 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:18:31 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:18:31 INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:4047
+14/12/06 15:18:31 INFO ui.SparkUI: Started Spark Web UI at http://hdn1001.local:4047
+14/12/06 15:18:31 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+14/12/06 15:18:32 INFO spark.SparkContext: Added JAR ./target/SparkProject-1.0.jar at http://10.6.8.254:57828/jars/SparkProject-1.0.jar with timestamp 1417900712089
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Connecting to master spark://hdn1001.local:7077...
+14/12/06 15:18:32 INFO storage.MemoryStore: ensureFreeSpace(170542) called with curMem=0, maxMem=9022812979
+14/12/06 15:18:32 INFO storage.MemoryStore: Block broadcast_0 stored as values to memory (estimated size 166.5 KB, free 8.4 GB)
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20141206151832-0297
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/0 on worker-20141121122447-hdd1006.local-7078 (hdd1006.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/0 on hostPort hdd1006.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/1 on worker-20141121122447-hdd1004.local-7078 (hdd1004.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/1 on hostPort hdd1004.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/2 on worker-20141121122446-hdd1003.local-7078 (hdd1003.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/2 on hostPort hdd1003.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/3 on worker-20141121122446-hdd1005.local-7078 (hdd1005.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/3 on hostPort hdd1005.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/4 on worker-20141121122446-hdd1002.local-7078 (hdd1002.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/4 on hostPort hdd1002.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor added: app-20141206151832-0297/5 on worker-20141121122447-hdd1001.local-7078 (hdd1001.local:7078) with 24 cores
+14/12/06 15:18:32 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206151832-0297/5 on hostPort hdd1001.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/3 is now RUNNING
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/1 is now RUNNING
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/4 is now RUNNING
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/0 is now RUNNING
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/2 is now RUNNING
+14/12/06 15:18:32 INFO client.AppClient$ClientActor: Executor updated: app-20141206151832-0297/5 is now RUNNING
+14/12/06 15:18:32 INFO storage.MemoryStore: ensureFreeSpace(170590) called with curMem=170542, maxMem=9022812979
+14/12/06 15:18:32 INFO storage.MemoryStore: Block broadcast_1 stored as values to memory (estimated size 166.6 KB, free 8.4 GB)
+14/12/06 15:18:33 INFO mapred.FileInputFormat: Total input paths to process : 144
+14/12/06 15:18:33 INFO spark.SparkContext: Starting job: collect at Decompressor.scala:65
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Got job 0 (collect at Decompressor.scala:65) with 144 output partitions (allowLocal=false)
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Final stage: Stage 0 (collect at Decompressor.scala:65)
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Parents of final stage: List()
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Missing parents: List()
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Submitting Stage 0 (MappedRDD[4] at map at Decompressor.scala:63), which has no missing parents
+14/12/06 15:18:33 INFO scheduler.DAGScheduler: Submitting 144 missing tasks from Stage 0 (MappedRDD[4] at map at Decompressor.scala:63)
+14/12/06 15:18:33 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 144 tasks
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1005.local:49529/user/Executor#65300171] with ID 3
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:0 as TID 0 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:0 as 1704 bytes in 8 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:1 as TID 1 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:1 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:2 as TID 2 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:2 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:3 as TID 3 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:3 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:4 as TID 4 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:4 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:5 as TID 5 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:5 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:6 as TID 6 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:6 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:7 as TID 7 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:7 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:8 as TID 8 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:8 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:9 as TID 9 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:9 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:10 as TID 10 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:10 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:11 as TID 11 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:11 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:12 as TID 12 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:12 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:13 as TID 13 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:13 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:14 as TID 14 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:14 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:15 as TID 15 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:15 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:16 as TID 16 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:16 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:17 as TID 17 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:17 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:18 as TID 18 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:18 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:19 as TID 19 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:19 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:20 as TID 20 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:20 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:21 as TID 21 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:21 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:22 as TID 22 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:22 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:23 as TID 23 on executor 3: hdd1005.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:23 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1004.local:35128/user/Executor#-2124859908] with ID 1
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:24 as TID 24 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:24 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:25 as TID 25 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:25 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:26 as TID 26 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:26 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:27 as TID 27 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:27 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:28 as TID 28 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:28 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:29 as TID 29 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:29 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:30 as TID 30 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:30 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:31 as TID 31 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:31 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:32 as TID 32 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:32 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:33 as TID 33 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:33 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:34 as TID 34 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:34 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:35 as TID 35 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:35 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:36 as TID 36 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:36 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:37 as TID 37 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:37 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:38 as TID 38 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:38 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:39 as TID 39 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:39 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:40 as TID 40 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:40 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:41 as TID 41 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:41 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:42 as TID 42 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:42 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:43 as TID 43 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:43 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:44 as TID 44 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:44 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:45 as TID 45 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:45 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:46 as TID 46 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:46 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:47 as TID 47 on executor 1: hdd1004.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:47 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1002.local:59883/user/Executor#-322705546] with ID 4
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:48 as TID 48 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:48 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:49 as TID 49 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:49 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:50 as TID 50 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:50 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:51 as TID 51 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:51 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:52 as TID 52 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:52 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:53 as TID 53 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:53 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:54 as TID 54 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:54 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:55 as TID 55 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:55 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:56 as TID 56 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:56 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:57 as TID 57 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:57 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:58 as TID 58 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:58 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:59 as TID 59 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:59 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:60 as TID 60 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:60 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:61 as TID 61 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:61 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:62 as TID 62 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:62 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:63 as TID 63 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:63 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:64 as TID 64 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:64 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:65 as TID 65 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:65 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:66 as TID 66 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:66 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:67 as TID 67 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:67 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:68 as TID 68 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:68 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:69 as TID 69 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:69 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:70 as TID 70 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:70 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:71 as TID 71 on executor 4: hdd1002.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:71 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1006.local:48014/user/Executor#1582456807] with ID 0
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:72 as TID 72 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:72 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:73 as TID 73 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:73 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:74 as TID 74 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:74 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:75 as TID 75 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:75 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:76 as TID 76 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:76 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:77 as TID 77 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:77 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:78 as TID 78 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:78 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:79 as TID 79 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:79 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:80 as TID 80 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:80 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:81 as TID 81 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:81 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:82 as TID 82 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:82 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:83 as TID 83 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:83 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:84 as TID 84 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:84 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:85 as TID 85 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:85 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:86 as TID 86 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:86 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:87 as TID 87 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:87 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:88 as TID 88 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:88 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:89 as TID 89 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:89 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:90 as TID 90 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:90 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:91 as TID 91 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:91 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:92 as TID 92 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:92 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:93 as TID 93 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:93 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:94 as TID 94 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:94 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:95 as TID 95 on executor 0: hdd1006.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:95 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1001.local:46651/user/Executor#1598260716] with ID 5
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:96 as TID 96 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:96 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:97 as TID 97 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:97 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:98 as TID 98 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:98 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:99 as TID 99 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:99 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:100 as TID 100 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:100 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:101 as TID 101 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:101 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:102 as TID 102 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:102 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:103 as TID 103 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:103 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:104 as TID 104 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:104 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:105 as TID 105 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:105 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:106 as TID 106 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:106 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:107 as TID 107 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:107 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:108 as TID 108 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:108 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:109 as TID 109 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:109 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:110 as TID 110 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:110 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:111 as TID 111 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:111 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:112 as TID 112 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:112 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:113 as TID 113 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:113 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:114 as TID 114 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:114 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:115 as TID 115 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:115 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:116 as TID 116 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:116 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:117 as TID 117 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:117 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:118 as TID 118 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:118 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:119 as TID 119 on executor 5: hdd1001.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:119 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO cluster.SparkDeploySchedulerBackend: Registered executor: Actor[akka.tcp://sparkExecutor@hdd1003.local:35270/user/Executor#2142873054] with ID 2
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:120 as TID 120 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:120 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:121 as TID 121 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:121 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:122 as TID 122 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:122 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:123 as TID 123 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:123 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:124 as TID 124 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:124 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:125 as TID 125 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:125 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:126 as TID 126 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:126 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:127 as TID 127 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:127 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:128 as TID 128 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:128 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:129 as TID 129 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:129 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:130 as TID 130 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:130 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:131 as TID 131 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:131 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:132 as TID 132 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:132 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:133 as TID 133 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:133 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:134 as TID 134 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:134 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:135 as TID 135 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:135 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:136 as TID 136 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:136 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:137 as TID 137 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:137 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:138 as TID 138 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:138 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:139 as TID 139 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:139 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:140 as TID 140 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:140 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:141 as TID 141 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:141 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:142 as TID 142 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:142 as 1704 bytes in 0 ms
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Starting task 0.0:143 as TID 143 on executor 2: hdd1003.local (PROCESS_LOCAL)
+14/12/06 15:18:34 INFO scheduler.TaskSetManager: Serialized task 0.0:143 as 1704 bytes in 1 ms
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1005.local:38197 with 589.2 MB RAM
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1004.local:56346 with 589.2 MB RAM
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1002.local:50819 with 589.2 MB RAM
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1006.local:48755 with 589.2 MB RAM
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1001.local:51621 with 589.2 MB RAM
+14/12/06 15:18:34 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdd1003.local:47833 with 589.2 MB RAM
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_141 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_10 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_5 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_125 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_16 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_128 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_18 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_133 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_0 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_136 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_13 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_120 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_21 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_130 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_8 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_138 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_2 in memory on hdd1005.local:38197 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_122 in memory on hdd1003.local:47833 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_104 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_98 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_96 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_112 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_106 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_117 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_114 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_109 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_101 in memory on hdd1001.local:51621 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 16 in 2469 ms on hdd1005.local (progress: 0/144)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 114 in 2338 ms on hdd1001.local (progress: 1/144)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 128 in 2326 ms on hdd1003.local (progress: 2/144)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 21 in 2469 ms on hdd1005.local (progress: 3/144)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 136 in 2321 ms on hdd1003.local (progress: 4/144)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 96 in 2354 ms on hdd1001.local (progress: 5/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 16)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 114)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 128)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 21)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 136)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 96)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 18 in 2475 ms on hdd1005.local (progress: 6/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 18)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 104 in 2350 ms on hdd1001.local (progress: 7/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 104)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 10 in 2484 ms on hdd1005.local (progress: 8/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 10)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 141 in 2322 ms on hdd1003.local (progress: 9/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 141)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 112 in 2347 ms on hdd1001.local (progress: 10/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 112)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 8 in 2488 ms on hdd1005.local (progress: 11/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 8)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 133 in 2331 ms on hdd1003.local (progress: 12/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 133)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 109 in 2352 ms on hdd1001.local (progress: 13/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 109)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 2 in 2498 ms on hdd1005.local (progress: 14/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 2)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 13 in 2488 ms on hdd1005.local (progress: 15/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 13)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 117 in 2350 ms on hdd1001.local (progress: 16/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 117)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 122 in 2345 ms on hdd1003.local (progress: 17/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 122)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 0 in 2531 ms on hdd1005.local (progress: 18/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 0)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 130 in 2340 ms on hdd1003.local (progress: 19/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 130)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 101 in 2365 ms on hdd1001.local (progress: 20/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 101)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 5 in 2501 ms on hdd1005.local (progress: 21/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 5)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 138 in 2338 ms on hdd1003.local (progress: 22/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 138)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 106 in 2365 ms on hdd1001.local (progress: 23/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 106)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 125 in 2350 ms on hdd1003.local (progress: 24/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 125)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 98 in 2372 ms on hdd1001.local (progress: 25/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 98)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 120 in 2355 ms on hdd1003.local (progress: 26/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 120)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_74 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_93 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_90 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_77 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_72 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_80 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_85 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_82 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_88 in memory on hdd1006.local:48755 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_26 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_24 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_40 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_45 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_29 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_107 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_37 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_116 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_115 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_119 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_42 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_34 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_110 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_32 in memory on hdd1004.local:56346 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_105 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_97 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_113 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_103 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 107 in 2394 ms on hdd1001.local (progress: 27/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 107)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_99 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 116 in 2389 ms on hdd1001.local (progress: 28/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_102 in memory on hdd1001.local:51621 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 116)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 115 in 2390 ms on hdd1001.local (progress: 29/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_108 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 115)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_100 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_118 in memory on hdd1001.local:51621 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 119 in 2389 ms on hdd1001.local (progress: 30/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_142 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 119)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_124 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_111 in memory on hdd1001.local:51621 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 93 in 2413 ms on hdd1006.local (progress: 31/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 93)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_134 in memory on hdd1003.local:47833 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 110 in 2400 ms on hdd1001.local (progress: 32/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_123 in memory on hdd1003.local:47833 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 110)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 105 in 2404 ms on hdd1001.local (progress: 33/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_126 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 105)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 90 in 2419 ms on hdd1006.local (progress: 34/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 90)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_139 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 97 in 2412 ms on hdd1001.local (progress: 35/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 97)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 74 in 2433 ms on hdd1006.local (progress: 36/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 74)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_121 in memory on hdd1003.local:47833 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 113 in 2402 ms on hdd1001.local (progress: 37/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 113)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 103 in 2411 ms on hdd1001.local (progress: 38/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 103)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_131 in memory on hdd1003.local:47833 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_132 in memory on hdd1003.local:47833 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 99 in 2415 ms on hdd1001.local (progress: 39/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 99)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 142 in 2381 ms on hdd1003.local (progress: 40/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 142)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_143 in memory on hdd1003.local:47833 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 102 in 2415 ms on hdd1001.local (progress: 41/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 102)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_129 in memory on hdd1003.local:47833 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 124 in 2398 ms on hdd1003.local (progress: 42/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 124)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_140 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 108 in 2413 ms on hdd1001.local (progress: 43/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 108)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 134 in 2393 ms on hdd1003.local (progress: 44/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_9 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 134)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_137 in memory on hdd1003.local:47833 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_17 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 100 in 2422 ms on hdd1001.local (progress: 45/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 100)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_127 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 123 in 2404 ms on hdd1003.local (progress: 46/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_4 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 123)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_135 in memory on hdd1003.local:47833 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 139 in 2394 ms on hdd1003.local (progress: 47/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 139)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 126 in 2404 ms on hdd1003.local (progress: 48/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 126)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 121 in 2409 ms on hdd1003.local (progress: 49/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 121)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 131 in 2401 ms on hdd1003.local (progress: 50/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_20 in memory on hdd1005.local:38197 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 131)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_11 in memory on hdd1005.local:38197 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 77 in 2449 ms on hdd1006.local (progress: 51/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 77)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 132 in 2404 ms on hdd1003.local (progress: 52/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 132)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 72 in 2453 ms on hdd1006.local (progress: 53/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_3 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 72)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 9 in 2562 ms on hdd1005.local (progress: 54/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_7 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 9)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 143 in 2399 ms on hdd1003.local (progress: 55/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 143)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_12 in memory on hdd1005.local:38197 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 80 in 2453 ms on hdd1006.local (progress: 56/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_22 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 80)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 17 in 2560 ms on hdd1005.local (progress: 57/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_15 in memory on hdd1005.local:38197 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 17)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 129 in 2413 ms on hdd1003.local (progress: 58/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_6 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 129)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 85 in 2452 ms on hdd1006.local (progress: 59/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_19 in memory on hdd1005.local:38197 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 85)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_23 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 4 in 2574 ms on hdd1005.local (progress: 60/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 4)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_14 in memory on hdd1005.local:38197 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 140 in 2408 ms on hdd1003.local (progress: 61/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 140)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 82 in 2457 ms on hdd1006.local (progress: 62/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 82)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_1 in memory on hdd1005.local:38197 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 20 in 2563 ms on hdd1005.local (progress: 63/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 20)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 137 in 2413 ms on hdd1003.local (progress: 64/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 137)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 88 in 2456 ms on hdd1006.local (progress: 65/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 88)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 11 in 2574 ms on hdd1005.local (progress: 66/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 11)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 3 in 2584 ms on hdd1005.local (progress: 67/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 3)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 7 in 2580 ms on hdd1005.local (progress: 68/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 7)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 12 in 2577 ms on hdd1005.local (progress: 69/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 12)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 22 in 2569 ms on hdd1005.local (progress: 70/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 22)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 15 in 2576 ms on hdd1005.local (progress: 71/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 15)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 19 in 2574 ms on hdd1005.local (progress: 72/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 19)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 32 in 2506 ms on hdd1004.local (progress: 73/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 32)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 6 in 2587 ms on hdd1005.local (progress: 74/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 6)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 29 in 2511 ms on hdd1004.local (progress: 75/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 29)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 23 in 2575 ms on hdd1005.local (progress: 76/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 23)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 118 in 2443 ms on hdd1001.local (progress: 77/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 118)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 24 in 2518 ms on hdd1004.local (progress: 78/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 24)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 14 in 2585 ms on hdd1005.local (progress: 79/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 14)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 111 in 2452 ms on hdd1001.local (progress: 80/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 111)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 26 in 2519 ms on hdd1004.local (progress: 81/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 26)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 45 in 2506 ms on hdd1004.local (progress: 82/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 45)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 40 in 2511 ms on hdd1004.local (progress: 83/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 40)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 37 in 2514 ms on hdd1004.local (progress: 84/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 37)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 34 in 2516 ms on hdd1004.local (progress: 85/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 34)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 42 in 2511 ms on hdd1004.local (progress: 86/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 42)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_79 in memory on hdd1006.local:48755 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_84 in memory on hdd1006.local:48755 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 127 in 2449 ms on hdd1003.local (progress: 87/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 127)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_83 in memory on hdd1006.local:48755 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 135 in 2444 ms on hdd1003.local (progress: 88/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 135)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_76 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_75 in memory on hdd1006.local:48755 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_91 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_95 in memory on hdd1006.local:48755 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_78 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 79 in 2496 ms on hdd1006.local (progress: 89/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 79)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_94 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_64 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_92 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 84 in 2496 ms on hdd1006.local (progress: 90/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_50 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 84)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_58 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_87 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_56 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 83 in 2499 ms on hdd1006.local (progress: 91/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_69 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 83)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_86 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_48 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_53 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_66 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_89 in memory on hdd1006.local:48755 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 76 in 2505 ms on hdd1006.local (progress: 92/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_61 in memory on hdd1002.local:50819 (size: 112.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 76)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_81 in memory on hdd1006.local:48755 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_73 in memory on hdd1006.local:48755 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 75 in 2508 ms on hdd1006.local (progress: 93/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 75)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 1 in 2627 ms on hdd1005.local (progress: 94/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 1)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 91 in 2498 ms on hdd1006.local (progress: 95/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 91)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 95 in 2496 ms on hdd1006.local (progress: 96/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 95)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 78 in 2511 ms on hdd1006.local (progress: 97/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 78)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 94 in 2502 ms on hdd1006.local (progress: 98/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 94)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 92 in 2504 ms on hdd1006.local (progress: 99/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 92)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 87 in 2511 ms on hdd1006.local (progress: 100/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 87)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 86 in 2514 ms on hdd1006.local (progress: 101/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 86)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 89 in 2513 ms on hdd1006.local (progress: 102/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 89)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_28 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_38 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_44 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_33 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_46 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_43 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_39 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 28 in 2588 ms on hdd1004.local (progress: 103/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 28)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 81 in 2550 ms on hdd1006.local (progress: 104/144)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_35 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 81)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_27 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 73 in 2557 ms on hdd1006.local (progress: 105/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 73)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_41 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_36 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 38 in 2585 ms on hdd1004.local (progress: 106/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 38)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 44 in 2582 ms on hdd1004.local (progress: 107/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 44)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 33 in 2591 ms on hdd1004.local (progress: 108/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 33)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_47 in memory on hdd1004.local:56346 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 46 in 2583 ms on hdd1004.local (progress: 109/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 46)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_31 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_30 in memory on hdd1004.local:56346 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 43 in 2586 ms on hdd1004.local (progress: 110/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 43)
+14/12/06 15:18:36 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_25 in memory on hdd1004.local:56346 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 39 in 2590 ms on hdd1004.local (progress: 111/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 39)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 35 in 2595 ms on hdd1004.local (progress: 112/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 35)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 27 in 2602 ms on hdd1004.local (progress: 113/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 27)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 41 in 2593 ms on hdd1004.local (progress: 114/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 41)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 36 in 2598 ms on hdd1004.local (progress: 115/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 36)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 47 in 2592 ms on hdd1004.local (progress: 116/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 47)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 31 in 2604 ms on hdd1004.local (progress: 117/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 31)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 48 in 2592 ms on hdd1002.local (progress: 118/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 48)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 50 in 2592 ms on hdd1002.local (progress: 119/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 50)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 58 in 2589 ms on hdd1002.local (progress: 120/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 58)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 56 in 2592 ms on hdd1002.local (progress: 121/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 56)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 64 in 2589 ms on hdd1002.local (progress: 122/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 64)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 69 in 2587 ms on hdd1002.local (progress: 123/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 69)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 53 in 2599 ms on hdd1002.local (progress: 124/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 53)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 66 in 2591 ms on hdd1002.local (progress: 125/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 66)
+14/12/06 15:18:36 INFO scheduler.TaskSetManager: Finished TID 61 in 2595 ms on hdd1002.local (progress: 126/144)
+14/12/06 15:18:36 INFO scheduler.DAGScheduler: Completed ResultTask(0, 61)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 30 in 2643 ms on hdd1004.local (progress: 127/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 30)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 25 in 2648 ms on hdd1004.local (progress: 128/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 25)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_71 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_55 in memory on hdd1002.local:50819 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_68 in memory on hdd1002.local:50819 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_70 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_52 in memory on hdd1002.local:50819 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_59 in memory on hdd1002.local:50819 (size: 160.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_51 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 71 in 2647 ms on hdd1002.local (progress: 129/144)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_49 in memory on hdd1002.local:50819 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 71)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 55 in 2660 ms on hdd1002.local (progress: 130/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 55)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_62 in memory on hdd1002.local:50819 (size: 176.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_57 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 68 in 2653 ms on hdd1002.local (progress: 131/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 68)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_54 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_65 in memory on hdd1002.local:50819 (size: 168.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 70 in 2654 ms on hdd1002.local (progress: 132/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 70)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_67 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 52 in 2668 ms on hdd1002.local (progress: 133/144)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_63 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 52)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 59 in 2664 ms on hdd1002.local (progress: 134/144)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_3_60 in memory on hdd1002.local:50819 (size: 184.0 B, free: 589.2 MB)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 59)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 51 in 2671 ms on hdd1002.local (progress: 135/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 51)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 49 in 2674 ms on hdd1002.local (progress: 136/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 49)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 62 in 2666 ms on hdd1002.local (progress: 137/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 62)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 57 in 2670 ms on hdd1002.local (progress: 138/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 57)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 54 in 2674 ms on hdd1002.local (progress: 139/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 54)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 65 in 2667 ms on hdd1002.local (progress: 140/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 65)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 67 in 2667 ms on hdd1002.local (progress: 141/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 67)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 63 in 2707 ms on hdd1002.local (progress: 142/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 63)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Finished TID 60 in 2710 ms on hdd1002.local (progress: 143/144)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Completed ResultTask(0, 60)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Stage 0 (collect at Decompressor.scala:65) finished in 3.121 s
+14/12/06 15:18:37 INFO scheduler.TaskSchedulerImpl: Remove TaskSet 0.0 from pool 
+14/12/06 15:18:37 INFO spark.SparkContext: Job finished: collect at Decompressor.scala:65, took 3.306297923 s
+14/12/06 15:18:37 INFO Configuration.deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+14/12/06 15:18:37 INFO Configuration.deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+14/12/06 15:18:37 INFO Configuration.deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+14/12/06 15:18:37 INFO Configuration.deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+14/12/06 15:18:37 INFO Configuration.deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+14/12/06 15:18:37 INFO mapred.FileInputFormat: Total input paths to process : 2
+14/12/06 15:18:37 INFO spark.SparkContext: Starting job: saveAsTextFile at Decompressor.scala:89
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Got job 1 (saveAsTextFile at Decompressor.scala:89) with 2 output partitions (allowLocal=false)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Final stage: Stage 1 (saveAsTextFile at Decompressor.scala:89)
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Parents of final stage: List()
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Missing parents: List()
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Submitting Stage 1 (MappedRDD[6] at saveAsTextFile at Decompressor.scala:89), which has no missing parents
+14/12/06 15:18:37 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from Stage 1 (MappedRDD[6] at saveAsTextFile at Decompressor.scala:89)
+14/12/06 15:18:37 INFO scheduler.TaskSchedulerImpl: Adding task set 1.0 with 2 tasks
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Starting task 1.0:0 as TID 144 on executor 2: hdd1003.local (NODE_LOCAL)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Serialized task 1.0:0 as 13432 bytes in 1 ms
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Starting task 1.0:1 as TID 145 on executor 5: hdd1001.local (NODE_LOCAL)
+14/12/06 15:18:37 INFO scheduler.TaskSetManager: Serialized task 1.0:1 as 13432 bytes in 1 ms
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_1_1 in memory on hdd1001.local:51621 (size: 685.8 KB, free: 588.5 MB)
+14/12/06 15:18:37 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Added rdd_1_0 in memory on hdd1003.local:47833 (size: 767.1 KB, free: 588.4 MB)
+14/12/06 15:18:38 INFO scheduler.TaskSetManager: Finished TID 144 in 697 ms on hdd1003.local (progress: 0/2)
+14/12/06 15:18:38 INFO scheduler.DAGScheduler: Completed ResultTask(1, 0)
+14/12/06 15:18:38 INFO scheduler.TaskSetManager: Finished TID 145 in 723 ms on hdd1001.local (progress: 1/2)
+14/12/06 15:18:38 INFO scheduler.TaskSchedulerImpl: Remove TaskSet 1.0 from pool 
+14/12/06 15:18:38 INFO scheduler.DAGScheduler: Completed ResultTask(1, 1)
+14/12/06 15:18:38 INFO scheduler.DAGScheduler: Stage 1 (saveAsTextFile at Decompressor.scala:89) finished in 0.726 s
+14/12/06 15:18:38 INFO spark.SparkContext: Job finished: saveAsTextFile at Decompressor.scala:89, took 0.843743481 s

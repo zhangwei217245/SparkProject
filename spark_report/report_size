@@ -1,0 +1,77 @@
+=========== original/34_KB.txt ============
+
+The Size of the Compressed File is 20545 Bytes.
+The Size of the Original File is 34008 Bytes.
+The reduction_ratio is 39.500%
+The Size of the Decompressed File is 34008 Bytes.
+
+=========== original/53_KB.txt ============
+
+The Size of the Compressed File is 31280 Bytes.
+The Size of the Original File is 54174 Bytes.
+The reduction_ratio is 42.200%
+The Size of the Decompressed File is 53163 Bytes.
+
+=========== original/143_KB.txt ============
+
+The Size of the Compressed File is 81820 Bytes.
+The Size of the Original File is 146231 Bytes.
+The reduction_ratio is 44.000%
+The Size of the Decompressed File is 143487 Bytes.
+
+=========== original/180_KB.txt ============
+
+The Size of the Compressed File is 102181 Bytes.
+The Size of the Original File is 184150 Bytes.
+The reduction_ratio is 44.500%
+The Size of the Decompressed File is 178848 Bytes.
+
+=========== original/402_KB.txt ============
+
+The Size of the Compressed File is 239646 Bytes.
+The Size of the Original File is 411580 Bytes.
+The reduction_ratio is 41.700%
+The Size of the Decompressed File is 402145 Bytes.
+
+=========== original/489_KB.txt ============
+
+The Size of the Compressed File is 274164 Bytes.
+The Size of the Original File is 499949 Bytes.
+The reduction_ratio is 45.100%
+The Size of the Decompressed File is 491118 Bytes.
+
+=========== original/1_MB.txt ============
+
+The Size of the Compressed File is 520850 Bytes.
+The Size of the Original File is 1048576 Bytes.
+The reduction_ratio is 50.300%
+The Size of the Decompressed File is 1048576 Bytes.
+
+=========== original/1.1_MB.txt ============
+
+The Size of the Compressed File is 641673 Bytes.
+The Size of the Original File is 1178184 Bytes.
+The reduction_ratio is 45.500%
+The Size of the Decompressed File is 1158823 Bytes.
+
+=========== original/6.24_MB.txt ============
+
+The Size of the Compressed File is 3600971 Bytes.
+The Size of the Original File is 6544233 Bytes.
+The reduction_ratio is 44.900%
+The Size of the Decompressed File is 6400661 Bytes.
+
+=========== original/10_MB.txt ============
+
+The Size of the Compressed File is 5211609 Bytes.
+The Size of the Original File is 10485760 Bytes.
+The reduction_ratio is 50.200%
+The Size of the Decompressed File is 10485760 Bytes.
+
+=========== original/Programming_Project_Dataset.txt ============
+
+The Size of the Compressed File is 0 Bytes.
+The Size of the Original File is 104109950 Bytes.
+The reduction_ratio is 100.000%
+The Size of the Decompressed File is 0 Bytes.
+

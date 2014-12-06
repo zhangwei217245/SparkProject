@@ -1,0 +1,132 @@
+======= Compressing original/34_KB.txt =========
+
+real 17.01
+user 14.71
+sys 0.70
+
+======= Decompressing original/34_KB.txt =========
+
+real 9.57
+user 11.45
+sys 0.48
+
+======= Compressing original/53_KB.txt =========
+
+real 17.60
+user 15.40
+sys 0.79
+
+======= Decompressing original/53_KB.txt =========
+
+real 10.17
+user 11.46
+sys 0.55
+
+======= Compressing original/143_KB.txt =========
+
+real 19.10
+user 15.19
+sys 0.70
+
+======= Decompressing original/143_KB.txt =========
+
+real 10.17
+user 11.45
+sys 0.52
+
+======= Compressing original/180_KB.txt =========
+
+real 18.47
+user 16.24
+sys 0.69
+
+======= Decompressing original/180_KB.txt =========
+
+real 10.43
+user 11.40
+sys 0.53
+
+======= Compressing original/402_KB.txt =========
+
+real 18.84
+user 17.29
+sys 0.70
+
+======= Decompressing original/402_KB.txt =========
+
+real 10.68
+user 12.08
+sys 0.57
+
+======= Compressing original/489_KB.txt =========
+
+real 19.12
+user 16.73
+sys 0.76
+
+======= Decompressing original/489_KB.txt =========
+
+real 10.98
+user 11.78
+sys 0.56
+
+======= Compressing original/1_MB.txt =========
+
+real 18.95
+user 12.55
+sys 0.65
+
+======= Decompressing original/1_MB.txt =========
+
+real 10.90
+user 12.29
+sys 0.56
+
+======= Compressing original/1.1_MB.txt =========
+
+real 18.17
+user 14.78
+sys 0.71
+
+======= Decompressing original/1.1_MB.txt =========
+
+real 10.75
+user 11.61
+sys 0.56
+
+======= Compressing original/6.24_MB.txt =========
+
+real 20.31
+user 16.07
+sys 0.72
+
+======= Decompressing original/6.24_MB.txt =========
+
+real 11.69
+user 11.31
+sys 0.55
+
+======= Compressing original/10_MB.txt =========
+
+real 22.39
+user 12.24
+sys 0.67
+
+======= Decompressing original/10_MB.txt =========
+
+real 12.61
+user 11.55
+sys 0.56
+
+======= Compressing original/Programming_Project_Dataset.txt =========
+
+real 1617.51
+user 1691.68
+sys 13.71
+
+======= Decompressing original/Programming_Project_Dataset.txt =========
+
+real 5.53
+user 7.09
+sys 0.29
+

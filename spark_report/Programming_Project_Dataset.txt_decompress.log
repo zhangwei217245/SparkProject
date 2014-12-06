@@ -1,0 +1,556 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/zookeeper/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/spark/assembly/lib/spark-assembly_2.10-0.9.0-cdh5.0.0-hadoop2.3.0-cdh5.0.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/spark/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+14/12/06 15:50:59 INFO slf4j.Slf4jLogger: Slf4jLogger started
+14/12/06 15:50:59 INFO Remoting: Starting remoting
+14/12/06 15:51:00 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://spark@hdn1001.local:57666]
+14/12/06 15:51:00 INFO Remoting: Remoting now listens on addresses: [akka.tcp://spark@hdn1001.local:57666]
+14/12/06 15:51:00 INFO spark.SparkEnv: Registering BlockManagerMaster
+14/12/06 15:51:00 INFO storage.DiskBlockManager: Created local directory at /tmp/spark-local-20141206155100-3b2c
+14/12/06 15:51:00 INFO storage.MemoryStore: MemoryStore started with capacity 8.4 GB.
+14/12/06 15:51:00 INFO network.ConnectionManager: Bound socket to port 59346 with id = ConnectionManagerId(hdn1001.local,59346)
+14/12/06 15:51:00 INFO storage.BlockManagerMaster: Trying to register BlockManager
+14/12/06 15:51:00 INFO storage.BlockManagerMasterActor$BlockManagerInfo: Registering block manager hdn1001.local:59346 with 8.4 GB RAM
+14/12/06 15:51:00 INFO storage.BlockManagerMaster: Registered BlockManager
+14/12/06 15:51:00 INFO spark.HttpServer: Starting HTTP Server
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:45114
+14/12/06 15:51:00 INFO broadcast.HttpBroadcast: Broadcast server started at http://10.6.8.254:45114
+14/12/06 15:51:00 INFO spark.SparkEnv: Registering MapOutputTracker
+14/12/06 15:51:00 INFO spark.HttpFileServer: HTTP File server directory is /tmp/spark-4d114c72-edf1-4d06-a91a-e90ac11a50cd
+14/12/06 15:51:00 INFO spark.HttpServer: Starting HTTP Server
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:53021
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4040: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@2ecc5436: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4040. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4041: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@11742dfe: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4041. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4042: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@5273a5d3: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4042. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4043: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@389d5793: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4043. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4044: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@63a6b16f: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4044. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4045: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@3529c445: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO ui.JettyUtils: Failed to create UI at port, 4045. Trying again.
+14/12/06 15:51:00 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:00 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED SelectChannelConnector@0.0.0.0:4046: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 WARN component.AbstractLifeCycle: FAILED org.eclipse.jetty.server.Server@815a3a1: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:126)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:59)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.open(SelectChannelConnector.java:187)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.nio.SelectChannelConnector.doStart(SelectChannelConnector.java:265)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:286)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply$mcV$sp(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$$anonfun$1.apply(JettyUtils.scala:118)
+	at scala.util.Try$.apply(Try.scala:161)
+	at org.apache.spark.ui.JettyUtils$.connect$1(JettyUtils.scala:118)
+	at org.apache.spark.ui.JettyUtils$.startJettyServer(JettyUtils.scala:129)
+	at org.apache.spark.ui.SparkUI.bind(SparkUI.scala:57)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:161)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:80)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:56)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:00 INFO handler.ContextHandler: stopped o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:01 INFO ui.JettyUtils: Failed to create UI at port, 4046. Trying again.
+14/12/06 15:51:01 INFO ui.JettyUtils: Error was: Failure(java.net.BindException: Address already in use)
+14/12/06 15:51:01 INFO server.Server: jetty-7.x.y-SNAPSHOT
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage/rdd,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/storage,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/stage,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages/pool,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/stages,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/environment,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/executors,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/metrics/json,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/static,null}
+14/12/06 15:51:01 INFO handler.ContextHandler: started o.e.j.s.h.ContextHandler{/,null}
+14/12/06 15:51:01 INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:4047
+14/12/06 15:51:01 INFO ui.SparkUI: Started Spark Web UI at http://hdn1001.local:4047
+14/12/06 15:51:01 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+14/12/06 15:51:01 INFO spark.SparkContext: Added JAR ./target/SparkProject-1.0.jar at http://10.6.8.254:53021/jars/SparkProject-1.0.jar with timestamp 1417902661558
+14/12/06 15:51:01 INFO client.AppClient$ClientActor: Connecting to master spark://hdn1001.local:7077...
+14/12/06 15:51:01 INFO storage.MemoryStore: ensureFreeSpace(170542) called with curMem=0, maxMem=9022812979
+14/12/06 15:51:01 INFO storage.MemoryStore: Block broadcast_0 stored as values to memory (estimated size 166.5 KB, free 8.4 GB)
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Connected to Spark cluster with app ID app-20141206155102-0313
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/0 on worker-20141121122447-hdd1006.local-7078 (hdd1006.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/0 on hostPort hdd1006.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/1 on worker-20141121122447-hdd1004.local-7078 (hdd1004.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/1 on hostPort hdd1004.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/2 on worker-20141121122446-hdd1003.local-7078 (hdd1003.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/2 on hostPort hdd1003.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/3 on worker-20141121122446-hdd1005.local-7078 (hdd1005.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/3 on hostPort hdd1005.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/4 on worker-20141121122446-hdd1002.local-7078 (hdd1002.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/4 on hostPort hdd1002.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor added: app-20141206155102-0313/5 on worker-20141121122447-hdd1001.local-7078 (hdd1001.local:7078) with 24 cores
+14/12/06 15:51:02 INFO cluster.SparkDeploySchedulerBackend: Granted executor ID app-20141206155102-0313/5 on hostPort hdd1001.local:7078 with 24 cores, 1024.0 MB RAM
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/4 is now RUNNING
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/2 is now RUNNING
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/0 is now RUNNING
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/5 is now RUNNING
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/1 is now RUNNING
+14/12/06 15:51:02 INFO client.AppClient$ClientActor: Executor updated: app-20141206155102-0313/3 is now RUNNING
+14/12/06 15:51:02 INFO storage.MemoryStore: ensureFreeSpace(170590) called with curMem=170542, maxMem=9022812979
+14/12/06 15:51:02 INFO storage.MemoryStore: Block broadcast_1 stored as values to memory (estimated size 166.6 KB, free 8.4 GB)
+Exception in thread "main" org.apache.hadoop.mapred.InvalidInputException: Input Pattern hdfs://hdn1001.local:8020/user/zhang56/Programming_Project_Dataset.txt.ec/part-* matches 0 files
+	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:251)
+	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:270)
+	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:140)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:207)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:205)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:205)
+	at org.apache.spark.rdd.MappedRDD.getPartitions(MappedRDD.scala:28)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:207)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:205)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:205)
+	at org.apache.spark.rdd.MappedRDD.getPartitions(MappedRDD.scala:28)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:207)
+	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:205)
+	at scala.Option.getOrElse(Option.scala:120)
+	at org.apache.spark.rdd.RDD.partitions(RDD.scala:205)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:902)
+	at org.apache.spark.rdd.RDD.collect(RDD.scala:602)
+	at edu.ttu.bigdata.huffman.Decompressor$.main(Decompressor.scala:65)
+	at edu.ttu.bigdata.huffman.Decompressor.main(Decompressor.scala)
