@@ -25,7 +25,7 @@ object Compressor {
 		huffman_code.append(code.toBinaryString).append("0")
 		//validating whether the generated code follows our rule:
 		//starts with 1, ends with 0, no 0s before 1s in between
-		while (!huffman_code.toString().matches("^1{1}1*0*0{1}$")) {
+		while (!huffman_code.matches("^1{1}1*0*0{1}$")) {
 			// if the code doesn't match with the rule, jump over a natural number
 			rst_code+=1;
 			// generate the code again, until the code meets our needs
