@@ -13,9 +13,7 @@ import org.apache.spark.SparkContext._
  */
 object Compressor {
 
-	def huffman_encoding(code:Int, c:Char,
-	                     encoding_table:Map[Char, String],
-	                     decoding_table:Map[String, Char]): Int ={
+	def huffman_encoding(code:Int, c:Char): Tuple2[Int,String] ={
 
 		var rst_code = code;
 
@@ -31,13 +29,9 @@ object Compressor {
 			// generate the code again, until the code meets our needs
 			huffman_code = code.toBinaryString + "0"
 		}
-		// put the code -> char pair into decoding table
-		decoding_table+=(huffman_code -> c);
-		// put the char -> code pair into encoding table
-		encoding_table+=(c -> huffman_code)
 		// natural number jumps over to the next
 		rst_code+=1;
-		return rst_code
+		return (rst_code,huffman_code)
 	}
 	/**
 	 * Taking each character in str as an input, acquire the corresponding huffman code and accumulate
@@ -96,7 +90,8 @@ object Compressor {
 			.reduceByKey(_+_,parallelism)
 			//change the order of elements in each tuple so that we can sort the RDD by occurrence
 			.map(item => item.swap).sortByKey(false,parallelism)
-			.foreach(item => code=huffman_encoding(code,item._2,encoding_table,decoding_table))
+			.foreach(item => {rtn=huffman_encoding(code,item._2); code=rtn._1;
+			encoding_table+=(item._2,rtn._2);decoding_table+=(rtn._2,item._2)})
 
 		/**
 		 * Due to the limitation of the design of Spark data processing, it's not feasible to store the decoding
