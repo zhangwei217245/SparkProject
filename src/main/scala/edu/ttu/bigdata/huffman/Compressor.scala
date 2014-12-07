@@ -13,26 +13,6 @@ import org.apache.spark.SparkContext._
  */
 object Compressor {
 
-	def huffman_encoding(code:Int, c:Char): Tuple2[Int,String] ={
-
-		var rst_code:Int = code;
-
-
-		//Generating "Amanda" code
-		var huffman_code:String = rst_code.toBinaryString + "0"
-
-		//validating whether the generated code follows our rule:
-		//starts with 1, ends with 0, no 0s before 1s in between
-		while (!huffman_code.matches("^1{1}1*0*0{1}$")) {
-			// if the code doesn't match with the rule, jump over a natural number
-			rst_code+=1;
-			// generate the code again, until the code meets our needs
-			huffman_code = code.toBinaryString + "0"
-		}
-		// natural number jumps over to the next
-		rst_code+=1;
-		return (rst_code,huffman_code)
-	}
 	/**
 	 * Taking each character in str as an input, acquire the corresponding huffman code and accumulate
 	 * it in a variable.
@@ -52,7 +32,7 @@ object Compressor {
 	 * @param args
 	 */
 	def main(args: Array[String]) {
-		// There must be more than 2 command arguments passing to this program. Otherwise, exit the program.
+		// There must be more than 3 command arguments passing to this program. Otherwise, exit the program.
 		if (args.length < 3) {
 			System.err.println(Console.RED + "usage : WordFind <sparkMaster> <dataFile> <parallelism>" + Console.RESET);
 			System.exit(1);
@@ -61,7 +41,6 @@ object Compressor {
 		val sparkMaster = args(0)
 		val dataFile = args(1)
 		val parallelism = args(2).toInt
-
 
 
 		//set up spark config
@@ -74,27 +53,55 @@ object Compressor {
 		// accelerated.
 		val textFile = sc.textFile(dataFile, parallelism/2).cache()
 
-		// define the encoding_table for encoding operations
-		var encoding_table: Map[Char, String] = Map();
-		// define the decoding_table which will be persisted for the "Decompressor".
-		var decoding_table: Map[String, Char] = Map();
-
-		// define code which is actually the natural number for generating our "Amanda" code
-		var code:Int = 1;
-
 		// flat each line of the file into separated characters.
 		var wordCount_arr = textFile.flatMap(line => line)
 			//read each character while creating a tuple with number "1" denoting one time occurrence.
 			.map(c => (c, 1))
 			//reduce by summing up the occurrence of the same characters.
-			.reduceByKey(_+_,parallelism)
+			.reduceByKey(_+_, parallelism)
 			//change the order of elements in each tuple so that we can sort the RDD by occurrence
-			.map(item => item.swap).sortByKey(false,parallelism)
-			.foreach(item => {
-			var rtn:Tuple2[Int, String]=huffman_encoding(code,item._2);
-			code=rtn._1;
-			encoding_table.updated(item._2, rtn._2);
-			decoding_table.updated(rtn._2, item._2)})
+			.map(item => item.swap).sortByKey(false, parallelism)
+			//calling collect() to convert RDD into a scala Seq[(Int, Char)], where each item of the Seq
+			//is a tuple containing a occurrence-character pair.
+			.collect()
+
+		// cache the size of the Seq
+		var rdd_size = wordCount_arr.length;
+
+		// define the encoding_table for encoding operations
+		var encoding_table: Map[Char, String] = Map();
+		// define the decoding_table which will be persisted for the "Decompressor".
+		var decoding_table: Map[String, Char] = Map();
+
+		// cursor for the current position of the Seq
+		var seq_cursor = 0;
+		// define code which is actually the natural number for generating our "Amanda" code
+		var code:Int = 1;
+
+		// traversing the Seq to get the occurrence->char tuple
+		while (seq_cursor < rdd_size) {
+			//acquire the character
+			val c = wordCount_arr(seq_cursor)._2
+
+			//Generating "Amanda" code
+			var huffman_code = code.toBinaryString + "0";
+			//validating whether the generated code follows our rule:
+			//starts with 1, ends with 0, no 0s before 1s in between
+			while (!huffman_code.matches("^1{1}1*0*0{1}$")) {
+				// if the code doesn't match with the rule, jump over a natural number
+				code+=1;
+				// generate the code again, until the code meets our needs
+				huffman_code = code.toBinaryString + "0";
+			}
+			// put the code -> char pair into decoding table
+			decoding_table+=(huffman_code -> c);
+			// put the char -> code pair into encoding table
+			encoding_table+=(c -> huffman_code)
+			// move cursor to next position of our Seq
+			seq_cursor+=1;
+			// natural number jumps over to the next
+			code+=1;
+		}
 
 		/**
 		 * Due to the limitation of the design of Spark data processing, it's not feasible to store the decoding
@@ -138,7 +145,7 @@ object Compressor {
 
 		//the function makeRDD[T](T=>value) here is to create a RDD in the context of Spark by scala collections such as
 		//List, Map, Seq, etc.
-		sc.makeRDD[(String, Char)](decoding_table.toSeq, 1)
+		sc.makeRDD[(String, Char)](decoding_table.toSeq,1)
 			// if directly store such RDD as a text file, the content of each line will look like "(1000,c)" which is hard to parse.
 			// so here we just simply convert it as a line with comma as the delimiter.
 			.map(x => x._1 + "," +x._2)
