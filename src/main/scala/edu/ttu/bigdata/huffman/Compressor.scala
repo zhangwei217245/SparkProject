@@ -91,7 +91,7 @@ object Compressor {
 			//change the order of elements in each tuple so that we can sort the RDD by occurrence
 			.map(item => item.swap).sortByKey(false,parallelism)
 			.foreach(item => {var rtn=huffman_encoding(code,item._2);code=rtn._1;
-			encoding_table+=(item._2 , rtn._2);decoding_table+=(rtn._2 , item._2)})
+			encoding_table+(item._2 , rtn._2);decoding_table+(rtn._2 , item._2)})
 
 		/**
 		 * Due to the limitation of the design of Spark data processing, it's not feasible to store the decoding
