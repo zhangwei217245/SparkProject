@@ -39,13 +39,14 @@ object Decompressor {
 	 */
 	def main(args: Array[String]) {
 		// There must be more than 2 command arguments passing to this program. Otherwise, exit the program.
-		if (args.length < 2) {
-			System.err.println(Console.RED + "usage : WordFind <sparkMaster> <dataFile>" + Console.RESET);
+		if (args.length < 3) {
+			System.err.println(Console.RED + "usage : WordFind <sparkMaster> <dataFile> <parallelism>" + Console.RESET);
 			System.exit(1);
 		}
 		// extract the arguments
 		val sparkMaster = args(0)
 		val dataFile = args(1)
+		val parallelism = args(2).toInt
 
 
 		// set up spark config
@@ -56,7 +57,7 @@ object Decompressor {
 		val sc = new SparkContext(sparkMaster, "edu.ttu.bigdata.huffman.Decompressor", conf)
 		// load huffman encoded text file from HDFS as RDD, and cache it. The the process of searching specified keyword
 		// can be accelerated.
-		val textFile = sc.textFile(dataFile +".huff/part-*").cache()
+		val textFile = sc.textFile(dataFile +".huff/part-*", parallelism/2).cache()
 		// load decoding talbe from HDFS as RDD and cache it.
 		val encodings = sc.textFile(dataFile +".ec/part-*").cache()
 			//map each line as a tuple via splitting the line by comma.

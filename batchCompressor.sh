@@ -23,6 +23,12 @@ CONFIG_OPTS="-Dspark.master=local -Dspark.jars=$JAR_NAME"
 echo "$CLASSPATH"
 
 
+PARALLELISM=$1
+
+if [ "${PARALLELISM}x" == "x" ]; then
+    PARALLELISM=16
+fi
+
 MASTER="spark://hdn1001.local:7077"
 
 REPORTDIR=./spark_report
@@ -48,7 +54,7 @@ hadoop fs -ls ${HDFSBASE}/*.txt | grep -v "Found" | sort -k5 -n | awk '{print $N
 	#rm -rf ${REPORTDIR}/${FILENAME}_compress.log
 	#touch ${REPORTDIR}/${FILENAME}_compress.log
 
-	command time -p -o ${REPORTDIR}/${FILENAME}_compress.time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${fname} > ${REPORTDIR}/${FILENAME}_compress.log 2>&1
+	command time -p -o ${REPORTDIR}/${FILENAME}_compress.time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${fname} ${PARALLELISM}> ${REPORTDIR}/${FILENAME}_compress.log 2>&1
 
 	cat ${REPORTDIR}/${FILENAME}_compress.time >> ${REPORTDIR}/report_time;
 
@@ -60,7 +66,7 @@ hadoop fs -ls ${HDFSBASE}/*.txt | grep -v "Found" | sort -k5 -n | awk '{print $N
 
 	#rm -rf ${REPORTDIR}/${FILENAME}_decompress.log
 	#touch ${REPORTDIR}/${FILENAME}_decompress.log
-	command time -p -o ${REPORTDIR}/${FILENAME}_decompress.time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} > ${REPORTDIR}/${FILENAME}_decompress.log 2>&1
+	command time -p -o ${REPORTDIR}/${FILENAME}_decompress.time $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} ${PARALLELISM}> ${REPORTDIR}/${FILENAME}_decompress.log 2>&1
 
 	cat ${REPORTDIR}/${FILENAME}_decompress.time >> ${REPORTDIR}/report_time;
 

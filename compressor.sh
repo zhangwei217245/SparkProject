@@ -29,6 +29,11 @@ CONFIG_OPTS="-Dspark.master=local -Dspark.jars=$JAR_NAME"
 echo "$CLASSPATH"
 
 FILEPATH=$1
+PARALLELISM=$2
+
+if [ "${PARALLELISM}x" == "x" ]; then
+    PARALLELISM=16
+fi
 
 MASTER="spark://hdn1001.local:7077"
 
@@ -40,7 +45,7 @@ hadoop fs -rm -r -skipTrash ./${FILENAME}.decompressed
 
 echo "Starting Compressor..."
 
-command time -v -o ${COMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH} > ${COMPRESSOR_LOG} 2>&1
+command time -v -o ${COMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Compressor ${MASTER} ${FILEPATH} ${PARALLELISM} > ${COMPRESSOR_LOG} 2>&1
 
 echo "Compressor Done!"
 
@@ -49,7 +54,7 @@ sleep 5s
 
 echo "Starting Decompressor..."
 
-command time -v -o ${DECOMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} >${DECOMPRESSOR_LOG} 2>&1
+command time -v -o ${DECOMPRESSOR_TIME} $JAVA_HOME/bin/java -cp $CLASSPATH $CONFIG_OPTS edu.ttu.bigdata.huffman.Decompressor ${MASTER} ${FILENAME} ${PARALLELISM} >${DECOMPRESSOR_LOG} 2>&1
 
 echo "Decompressor Done!"
 
