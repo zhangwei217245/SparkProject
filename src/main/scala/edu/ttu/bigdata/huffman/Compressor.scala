@@ -19,10 +19,10 @@ object Compressor {
 
 		var rst_code = code;
 
-		var huffman_code = rst_code.toBinaryString + "0"
 
 		//Generating "Amanda" code
-		huffman_code.append(code.toBinaryString).append("0")
+		var huffman_code = rst_code.toBinaryString + "0"
+
 		//validating whether the generated code follows our rule:
 		//starts with 1, ends with 0, no 0s before 1s in between
 		while (!huffman_code.matches("^1{1}1*0*0{1}$")) {
