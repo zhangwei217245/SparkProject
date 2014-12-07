@@ -15,11 +15,11 @@ object Compressor {
 
 	def huffman_encoding(code:Int, c:Char): Tuple2[Int,String] ={
 
-		var rst_code = code;
+		var rst_code:Int = code;
 
 
 		//Generating "Amanda" code
-		var huffman_code = rst_code.toBinaryString + "0"
+		var huffman_code:String = rst_code.toBinaryString + "0"
 
 		//validating whether the generated code follows our rule:
 		//starts with 1, ends with 0, no 0s before 1s in between
@@ -90,8 +90,11 @@ object Compressor {
 			.reduceByKey(_+_,parallelism)
 			//change the order of elements in each tuple so that we can sort the RDD by occurrence
 			.map(item => item.swap).sortByKey(false,parallelism)
-			.foreach(item => {var rtn:Tuple2[Int, String]=huffman_encoding(code,item._2);code=rtn._1;
-			encoding_table+=(item._2 , rtn._2.toString);decoding_table+(rtn._2.toString , item._2)})
+			.foreach(item => {
+			var rtn:Tuple2[Int, String]=huffman_encoding(code,item._2);
+			code=rtn._1;
+			encoding_table.updated(item._2, rtn._2);
+			decoding_table.updated(rtn._2, item._2)})
 
 		/**
 		 * Due to the limitation of the design of Spark data processing, it's not feasible to store the decoding
